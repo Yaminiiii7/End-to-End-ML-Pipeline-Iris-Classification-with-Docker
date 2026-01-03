@@ -1,4 +1,4 @@
-# 🩺Iris Flower Classification Using KNN in Python – MLOps Project (FastAPI + Docker + K8s)
+# Iris Flower Classification Using KNN in Python – MLOps Project (FastAPI + Docker + K8s)
 
 
 This project helps you learn **Building and Deploying an ML Model** using a simple and real-world use case end-to-end machine learning workflow: predicting flower species are predicted based on sepal and petal measurements.
