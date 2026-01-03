@@ -25,6 +25,60 @@ We use a K-Nearest Neighbor Classifier trained on the **Iris Dataset**.
 
 ## 🚀 Quick Start
 
+## Install EC2 dependencies
+
+1.  **Update System Packages:**
+    ```bash
+    sudo apt update && sudo apt upgrade -y
+    ```
+
+2.  **Install Git, Docker, and Docker Compose:**
+    ```bash
+    sudo apt install git docker.io docker-compose-v2 -y
+    ```
+
+3.  **Start and Enable Docker:**
+    ```bash
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    ```
+
+4.  **Add User to Docker Group (to run docker without sudo):**
+    ```bash
+    sudo usermod -aG docker $USER
+    newgrp docker
+    ```
+5) **Install k3s**
+  ```bash
+  curl -sfL https://get.k3s.io | sh -
+  ```
+
+6) **Verify cluster + set kubectl access**
+  k3s installs kubectl as k3s kubectl. You can use either:
+  ```bash
+  sudo k3s kubectl get nodes
+  sudo k3s kubectl get pods -A
+  ```
+  **(Optional) Make kubectl available normally**
+  ```bash
+  sudo ln -s /usr/local/bin/k3s /usr/local/bin/kubectl
+  kubectl get nodes
+  ```
+
+7) **Allow your user to read kubeconfig**
+  ```bash
+  sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+  export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+  echo 'export KUBECONFIG=/etc/rancher/k3s/k3s.yaml' >> ~/.bashrcsource ~/.bashrc
+  kubectl get nodes
+  ```
+
+8) **Apply your Kubernetes manifests**
+  From the folder that has your YAMLs:
+  ```bash
+  kubectl apply -f .# or
+  kubectl apply -f your-manifest.yaml
+  ```
 ### 1. Clone the Repo
 
 ```bash
