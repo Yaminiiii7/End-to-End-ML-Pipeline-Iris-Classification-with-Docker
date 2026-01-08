@@ -59,11 +59,6 @@ We use a K-Nearest Neighbor Classifier trained on the **Iris Dataset**.
   sudo k3s kubectl get nodes
   sudo k3s kubectl get pods -A
   ```
-  **(Optional) Make kubectl available normally**
-  ```bash
-  sudo ln -s /usr/local/bin/k3s /usr/local/bin/kubectl
-  kubectl get nodes
-  ```
 
 7) **Allow your user to read kubeconfig**
   ```bash
@@ -135,6 +130,11 @@ uvicorn main:app --reload
 
 ```bash
   kubectl apply -f iris-prediction-model-deployment.yml
+```
+### 11. Check pods availability
+
+```
+    kubectl get pods -w
 ```
 
 ## 11. Access 
