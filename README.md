@@ -112,27 +112,23 @@ uvicorn main:app --reload
 /predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2
 ```
 
-
-
-```
-
 ## Dockerize the API
 
 ### Build the Docker Image
 
-```
+```bash
   docker build -t iris-prediction-model .
 ```
 
 ### Run the Container
 
-```
+```bash
   docker run -p 8000:8000 iris-prediction-model
 ```
 
-## Deploy to Kubernetes
+### Deploy to Kubernetes
 
-```
+```bash
   kubectl apply -f iris-prediction-model-deployment.yml
 ```
 
