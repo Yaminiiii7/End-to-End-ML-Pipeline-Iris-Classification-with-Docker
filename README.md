@@ -117,26 +117,26 @@ We use a K-Nearest Neighbor Classifier trained on the **Iris Dataset**.
     ```
 
 
-### 1. Clone the Repo
+## 1. Clone the Repo
 
   ```bash
     git clone https://github.com/Yaminiiii7/Containerized-ML-Pipeline-with-Docker-and-K3s-Iris-Classification.git
     cd End-to-End-ML-Pipeline-Iris-Classification-with-Docker
   ```
-### 2.Install Python and pip
+## 2.Install Python and pip
 
   ```bash
     sudo apt install python3 python3-pip python3-venv -y
   ```
 
-### 3. Create Virtual Environment
+## 3. Create Virtual Environment
 
   ```
     python3 -m venv .mlops
     .venv/Scripts/Activate
   ```
 
-### 4. Install Dependencies
+## 4. Install Dependencies
 
   ```
     pip install -r requirements.txt
@@ -154,7 +154,7 @@ We use a K-Nearest Neighbor Classifier trained on the **Iris Dataset**.
     uvicorn main:app --reload
   ```
 
-### 7. Sample Input for /predict
+## 7. Sample Input for /predict
 
   ```
     /predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2
@@ -162,24 +162,24 @@ We use a K-Nearest Neighbor Classifier trained on the **Iris Dataset**.
 
 ## Dockerize the API
 
-### 8. Build the Docker Image
+## 8. Build the Docker Image
 
   ```bash
     docker build -t iris-prediction-model .
   ```
 
-### 9. Run the Container
+## 9. Run the Container
 
   ```bash
      docker run -p 8000:8000 iris-prediction-model
   ```
 
-### 10. Deploy to Kubernetes
+## 10. Deploy to Kubernetes
 
   ```bash
     kubectl apply -f iris-prediction-model-deployment.yml
   ```
-### 11. Check pods availability
+## 11. Check pods availability
 
   ```
     kubectl get pods -w
